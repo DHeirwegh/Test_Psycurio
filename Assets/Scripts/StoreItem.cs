@@ -1,8 +1,5 @@
-using NUnit.Framework;
-using TMPro;
+using System.Collections.Generic;
 using UnityEngine;
-using static Codice.Client.Common.EventTracking.TrackFeatureUseEvent.Features.DesktopGUI.Filters;
-using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
 namespace XRPlayer
 {

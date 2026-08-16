@@ -2,8 +2,6 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Unity.XR.CoreUtils;
 using UnityEngine.XR.Interaction.Toolkit;
-using UnityEngine.XR.Interaction.Toolkit.Interactors;
-using UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation;
 
 namespace XRPlayer
 {
@@ -38,8 +36,6 @@ namespace XRPlayer
             {
                 playerCamera = xrOrigin.Camera;
             }
-
-
 
             if (playerCamera != null)
             {
