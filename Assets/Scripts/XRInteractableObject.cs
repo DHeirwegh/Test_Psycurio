@@ -14,7 +14,6 @@ namespace XRPlayer
         [Header("Visual Feedback")]
         public Color hoverColor = Color.cyan;
         [SerializeField]
-        private Color selectColor = Color.green;
 
         [Header("Events")]
         public UnityEvent onInteracted = new UnityEvent();
@@ -61,7 +60,6 @@ namespace XRPlayer
         {
             if (objectRenderer != null && objectRenderer.material != null)
             {
-                objectRenderer.material.color = selectColor;
                 Invoke(nameof(OnHoverExit), 0.3f);
             }
 

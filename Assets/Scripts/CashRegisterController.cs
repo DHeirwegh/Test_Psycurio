@@ -56,18 +56,29 @@ namespace XRPlayer
         {
             CalculateAndDisplayTotal();
             ShowSpeechBalloon();
+
+            // After registering, remove all runtime copies on the counter (simulate purchase)
+            var allItems = new System.Collections.Generic.List<StoreItem>(FindObjectsByType<StoreItem>(FindObjectsSortMode.None));
+            int removed = 0;
+            foreach (var item in allItems)
+            {
+                if (item != null && item.isOnCounter && item.isCopy)
+                {
+                    Destroy(item.gameObject);
+                    removed++;
+                }
+            }
+
+            Debug.Log($"[CashRegister] Removed {removed} items from counter after purchase.");
         }
 
         public void CalculateAndDisplayTotal()
         {
-            // Find all store items in scene if list is empty
-            if (storeItems == null || storeItems.Count == 0)
-            {
-                storeItems = new List<StoreItem>(FindObjectsByType<StoreItem>(FindObjectsSortMode.None));
-            }
+            // Always refresh the list of current StoreItem instances in the scene
+            storeItems = new System.Collections.Generic.List<StoreItem>(FindObjectsByType<StoreItem>(FindObjectsSortMode.None));
 
             float totalCost = 0f;
-            List<string> boughtItems = new List<string>();
+            System.Collections.Generic.List<string> boughtItems = new System.Collections.Generic.List<string>();
 
             foreach (var item in storeItems)
             {
