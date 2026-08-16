@@ -17,12 +17,12 @@ namespace XRPlayer
         [Header("Cashier Speech Balloon UI")]
         public TextMeshPro cashierSpeechText;
         public GameObject speechBalloonObject;
-        public float balloonDuration = 3.0f;
+        [SerializeField]
+        private float balloonDuration = 3.0f;
 
-        [Header("Items List")]
-        public List<StoreItem> storeItems = new List<StoreItem>();
+        private List<StoreItem> storeItems = new List<StoreItem>();
 
-        private XRInteractableObject interactable;
+        public XRInteractableObject interactable;
 
         private void Awake()
         {
@@ -37,6 +37,7 @@ namespace XRPlayer
 
         private void Start()
         {
+            storeItems = new List<StoreItem>(FindObjectsByType<StoreItem>(FindObjectsSortMode.None));
             if (registerScreenText != null)
             {
                 registerScreenText.text = "$0.00";

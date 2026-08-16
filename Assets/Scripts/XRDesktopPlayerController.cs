@@ -23,7 +23,6 @@ namespace XRPlayer
 
         [Header("XR References")]
         public Camera playerCamera;
-        public TeleportationProvider teleportationProvider;
 
         private XROrigin xrOrigin;
         private CharacterController characterController;
@@ -40,10 +39,7 @@ namespace XRPlayer
                 playerCamera = xrOrigin.Camera;
             }
 
-            if (teleportationProvider == null)
-            {
-                teleportationProvider = GetComponentInChildren<TeleportationProvider>();
-            }
+
 
             if (playerCamera != null)
             {
@@ -124,27 +120,6 @@ namespace XRPlayer
                 Ray ray = playerCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
                 if (Physics.Raycast(ray, out RaycastHit hit, 100f))
                 {
-                    // 1. Check for Teleportation Area or Anchor
-                    TeleportationArea teleportArea = hit.collider.GetComponentInParent<TeleportationArea>();
-                    TeleportationAnchor teleportAnchor = hit.collider.GetComponentInParent<TeleportationAnchor>();
-
-                    if (teleportationProvider != null && (teleportArea != null || teleportAnchor != null))
-                    {
-                        Vector3 targetPos = teleportAnchor != null ? teleportAnchor.teleportAnchorTransform.position : hit.point;
-                        Quaternion targetRot = teleportAnchor != null ? teleportAnchor.teleportAnchorTransform.rotation : transform.rotation;
-
-                        TeleportRequest req = new TeleportRequest
-                        {
-                            destinationPosition = targetPos,
-                            destinationRotation = targetRot,
-                            matchOrientation = MatchOrientation.TargetUp
-                        };
-                        teleportationProvider.QueueTeleportRequest(req);
-                        Debug.Log($"[XRDesktopPlayerController] Teleported to {targetPos}");
-                        return;
-                    }
-
-                    // 2. Check for Interactable objects
                     XRInteractableObject interactable = hit.collider.GetComponentInParent<XRInteractableObject>();
                     if (interactable != null)
                     {

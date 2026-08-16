@@ -13,10 +13,11 @@ namespace XRPlayer
     {
         [Header("Visual Feedback")]
         public Color hoverColor = Color.cyan;
-        public Color selectColor = Color.green;
+        [SerializeField]
+        private Color selectColor = Color.green;
 
         [Header("Events")]
-        public UnityEvent onInteracted;
+        public UnityEvent onInteracted = new UnityEvent();
 
         private XRSimpleInteractable interactable;
         private Renderer objectRenderer;
@@ -64,17 +65,9 @@ namespace XRPlayer
                 Invoke(nameof(OnHoverExit), 0.3f);
             }
 
-            // Simple bounce animation on interaction
-            transform.localScale *= 1.1f;
-            Invoke(nameof(ResetScale), 0.15f);
-
             Debug.Log($"[XRInteractableObject] Interacted with {gameObject.name}");
             onInteracted?.Invoke();
         }
 
-        private void ResetScale()
-        {
-            transform.localScale /= 1.1f;
-        }
     }
 }

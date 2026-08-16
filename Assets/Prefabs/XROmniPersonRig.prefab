@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 3d7d8831f3054ce45bce23ed114d1e78, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -208,7 +208,15 @@ MonoBehaviour:
       m_Id: dae1b9f6-974d-4718-ae79-2c7ae5f6f782
       m_Processors: 
       m_Interactions: 
-      m_SingletonActionBindings: []
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: 261e84c7-f139-4eba-9bfa-88be5ed586f3
+        m_Path: <XRHMD>/centerEyePosition
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Position
+        m_Flags: 0
       m_Flags: 0
       m_Priority: 0
     m_Reference: {fileID: 0}
@@ -221,7 +229,15 @@ MonoBehaviour:
       m_Id: 63af78ad-e529-4f7e-9b55-cd5fd6a88010
       m_Processors: 
       m_Interactions: 
-      m_SingletonActionBindings: []
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: a77154ed-0df4-4316-be1c-43db1a7134ea
+        m_Path: <XRHMD>/centerEyeRotation
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Rotation
+        m_Flags: 0
       m_Flags: 0
       m_Priority: 0
     m_Reference: {fileID: 0}
@@ -1293,7 +1309,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3707282666573291343}
   - component: {fileID: 6067722251649111463}
-  - component: {fileID: 8781459205556129996}
+  - component: {fileID: 1712431901508298719}
   m_Layer: 0
   m_Name: Left Controller
   m_TagString: Untagged
@@ -1391,7 +1407,7 @@ MonoBehaviour:
     m_SingletonActionBindings: []
     m_Flags: 0
     m_Priority: 0
---- !u!114 &8781459205556129996
+--- !u!114 &1712431901508298719
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1434,7 +1450,7 @@ MonoBehaviour:
       m_Name: Select
       m_Type: 1
       m_ExpectedControlType: 
-      m_Id: 4bba9a14-2697-42a1-b2de-509bf3c19f09
+      m_Id: b0fa538c-adee-445c-a55c-a7a0d79b9c11
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -1444,7 +1460,7 @@ MonoBehaviour:
       m_Name: Select Value
       m_Type: 0
       m_ExpectedControlType: Axis
-      m_Id: 2f861bc4-95a3-4a85-a362-4cf33a449208
+      m_Id: 59c9b758-7579-4ed4-b542-3e2e19d9ed16
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -1466,7 +1482,7 @@ MonoBehaviour:
       m_Name: Activate
       m_Type: 1
       m_ExpectedControlType: 
-      m_Id: 1d22f601-dc7d-4a88-afe5-d57b556ce8cf
+      m_Id: 749333b8-2122-43ec-9bf4-967b73dc7957
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -1476,7 +1492,7 @@ MonoBehaviour:
       m_Name: Activate Value
       m_Type: 0
       m_ExpectedControlType: Axis
-      m_Id: 3318a512-a29b-4967-b182-0110f1986b58
+      m_Id: 0db0df32-3b6d-4557-93f8-bbf80627a797
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -1582,7 +1598,7 @@ MonoBehaviour:
       m_Name: UI Press
       m_Type: 1
       m_ExpectedControlType: 
-      m_Id: 3b2e5429-32ad-4554-b2ab-e2e547ea5b8b
+      m_Id: e2f87c78-860e-4771-8cd0-3b17efa746d3
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -1592,7 +1608,7 @@ MonoBehaviour:
       m_Name: UI Press Value
       m_Type: 0
       m_ExpectedControlType: Axis
-      m_Id: ae53c9c1-8360-491f-aac2-048596f112a4
+      m_Id: 2fa54ceb-4425-4b88-976e-f2b94f8cd353
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -1614,7 +1630,7 @@ MonoBehaviour:
       m_Name: UI Scroll
       m_Type: 0
       m_ExpectedControlType: Vector2
-      m_Id: 9609ee73-b510-415e-8a5c-88ef13a68406
+      m_Id: e6ab6e67-31eb-4caf-bcc9-c3a89263171a
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -1629,7 +1645,7 @@ MonoBehaviour:
       m_Name: Translate Manipulation
       m_Type: 0
       m_ExpectedControlType: Vector2
-      m_Id: ca449fb4-edb3-4c85-81e5-6302498493fd
+      m_Id: 2f7d0c7a-f1cc-411f-a636-1ad3788b3046
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -1644,7 +1660,7 @@ MonoBehaviour:
       m_Name: Rotate Manipulation
       m_Type: 0
       m_ExpectedControlType: Vector2
-      m_Id: b9b83c71-e1d3-4b61-909c-3e72a8ebab2f
+      m_Id: 32232997-866e-4ec4-a523-207345d0224c
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -1659,7 +1675,7 @@ MonoBehaviour:
       m_Name: Directional Manipulation
       m_Type: 0
       m_ExpectedControlType: Vector2
-      m_Id: a20cfc6b-2a16-4615-a142-c1e387123f5f
+      m_Id: db3cb9b7-6b83-4d07-b9c8-6880e031e598
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -1674,7 +1690,7 @@ MonoBehaviour:
       m_Name: Scale Toggle
       m_Type: 1
       m_ExpectedControlType: 
-      m_Id: 7723f96e-af48-4f26-8098-19709badcca8
+      m_Id: 75801b52-6684-476d-8563-8d467108baa4
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -1684,7 +1700,7 @@ MonoBehaviour:
       m_Name: Scale Toggle Value
       m_Type: 0
       m_ExpectedControlType: Axis
-      m_Id: 3f3ab1f6-3e4c-40d8-9529-611d534f4823
+      m_Id: cfbee001-44f4-4fe6-909d-68b5a8483093
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -1706,7 +1722,7 @@ MonoBehaviour:
       m_Name: Scale Over Time
       m_Type: 0
       m_ExpectedControlType: Vector2
-      m_Id: 0a8bd4c7-674a-4186-9476-1ce61358ce9e
+      m_Id: ef4538a0-8fd1-4d58-886b-659a554f0f2a
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -1721,7 +1737,7 @@ MonoBehaviour:
       m_Name: Scale Distance Delta
       m_Type: 0
       m_ExpectedControlType: Axis
-      m_Id: 4d6e5286-e2d2-49e8-a4e0-24ca4dccaa16
+      m_Id: 84b2fd9e-c29e-46dd-b923-47ddf45c78ef
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -1796,7 +1812,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 3d7d8831f3054ce45bce23ed114d1e78, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

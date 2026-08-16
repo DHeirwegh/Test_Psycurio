@@ -13,15 +13,14 @@ namespace XRPlayer
         public string itemName = "Item";
         public float price = 5.00f;
 
-        [Header("Positions")]
-        public Vector3 shelfPosition;
-        public Vector3 counterPosition;
+        private Vector3 shelfPosition;
+
+        [SerializeField]
+        private Transform counterPosition;
 
         [Header("State")]
         public bool isOnCounter = false;
 
-        [Header("UI Reference")]
-        public TextMeshPro priceLabel;
 
         private Vector3 targetPosition;
         private bool isMoving = false;
@@ -30,6 +29,7 @@ namespace XRPlayer
 
         private void Awake()
         {
+            shelfPosition = transform.position;
             interactable = GetComponent<XRInteractableObject>();
             if (interactable == null)
             {
@@ -48,7 +48,6 @@ namespace XRPlayer
             }
             targetPosition = transform.position;
 
-            UpdateLabel();
         }
 
         private void Update()
@@ -67,19 +66,13 @@ namespace XRPlayer
         public void OnItemClicked()
         {
             isOnCounter = !isOnCounter;
-            targetPosition = isOnCounter ? counterPosition : shelfPosition;
+            targetPosition = isOnCounter ? counterPosition.position : shelfPosition;
             isMoving = true;
 
             Debug.Log($"[StoreItem] {itemName} clicked! IsOnCounter: {isOnCounter}. Target Pos: {targetPosition}");
         }
 
-        public void UpdateLabel()
-        {
-            if (priceLabel != null)
-            {
-                priceLabel.text = $"{itemName}\n${price:F2}";
-            }
-        }
+
     }
 }
 
